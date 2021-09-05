@@ -1,0 +1,104 @@
+body {
+  background-color: black;
+}
+.hoverbox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 922px;
+  height: 504px;
+  background: url("./img/background.png") center center / 100% no-repeat;
+}
+
+.hoverbox .screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+}
+
+.hoverbox .screen [class*="hud"] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 1s;
+}
+
+.hoverbox .screen:hover [class*="hud"] {
+  opacity: 1;
+}
+
+.hoverbox .screen [class*="hud"] img {
+  max-width: 100%;
+}
+
+.hoverbox .screen .hud01 {
+  animation: rolling01 5s linear infinite;
+  width: 80%;
+}
+
+.hoverbox .screen .hud02 {
+  animation: rolling02 10s linear infinite alternate;
+}
+
+.hoverbox .screen .hud03 {
+  animation: rollandscale 3s infinite;
+}
+
+.hoverbox .screen .hud04 {
+}
+
+.hoverbox .screen .hud05 {
+  animation: rolling02 6s infinite;
+}
+
+.hoverbox .screen .hud06 {
+  top: 22%;
+}
+
+@keyframes rolling01 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rolling02 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  30% {
+    transform: translate(-50%, -50%) rotate(200deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rollandscale {
+  0% {
+    transform: translate(-50%, -50%) rotate(0) scale(1);
+  }
+  35% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+  }
+  40% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(0.5);
+  }
+  60% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.5);
+  }
+  65% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+  }
+}
